@@ -45,38 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return date;
   }
 
-  Future<String> getTime1(String url) async {
-    http.Response res = await http.get(url);
-    print("resposne: ${res.body}");
-    var data1 = jsonDecode(res.body);
-    var date1 = data1['datetime'];
-    return date1;
-  }
-
-  Future<String> getTime2(String url) async {
-    http.Response res = await http.get(url);
-    print("resposne: ${res.body}");
-    var data2 = jsonDecode(res.body);
-    var date2 = data2['datetime'];
-    return date2;
-  }
-
-  Future<String> getTime3(String url) async {
-    http.Response res = await http.get(url);
-    print("resposne: ${res.body}");
-    var data3 = jsonDecode(res.body);
-    var date3 = data3['datetime'];
-    return date3;
-  }
-
-  Future<String> getTime4(String url) async {
-    http.Response res = await http.get(url);
-    print("resposne: ${res.body}");
-    var data4 = jsonDecode(res.body);
-    var date4 = data4['datetime'];
-    return date4;
-  }
-
   @override
   void initState() {
     // TODO: implement initState
@@ -91,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Europe = Europe.replaceAll("T", " ");
       });
     });
-    getTime1('http://worldtimeapi.org/api/timezone/Asia/Kabul').then((value) {
+    getTime('http://worldtimeapi.org/api/timezone/Asia/Kabul').then((value) {
       setState(() {
         print("kabul $value");
         kabul = value.substring(0, value.indexOf('.'));
@@ -99,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         //  countryDate.add(value);
       });
     });
-    getTime2('http://worldtimeapi.org/api/timezone/Asia/Singapore')
+    getTime('http://worldtimeapi.org/api/timezone/Asia/Singapore')
         .then((value) {
       setState(() {
         print("Singapore $value");
@@ -107,14 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
         singapore = singapore.replaceAll("T", " ");
       });
     });
-    getTime3('http://worldtimeapi.org/api/timezone/Asia/Tokyo').then((value) {
+    getTime('http://worldtimeapi.org/api/timezone/Asia/Tokyo').then((value) {
       setState(() {
         print("Tokyo $value");
         tokyo = value.substring(0, value.indexOf('.'));
         tokyo = tokyo.replaceAll("T", " ");
       });
     });
-    getTime4('http://worldtimeapi.org/api/timezone/America/Santiago')
+    getTime('http://worldtimeapi.org/api/timezone/America/Santiago')
         .then((value) {
       setState(() {
         print("Seoul $value");
