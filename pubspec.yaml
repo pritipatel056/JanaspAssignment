@@ -29,7 +29,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
   intl: 0.15.7
-  timezone: "^0.5.0-dev-2"
+  http: ^0.12.2
+
 
 dev_dependencies:
   flutter_test:
